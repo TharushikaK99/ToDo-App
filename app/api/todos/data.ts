@@ -14,10 +14,11 @@ export const getTodos = (): Todo[] => {
     return todos;
 }
 
-export const addTodo = (name: string): void => {
-    const id = todos[-1].id + 1;
+export const addTodo = (name: string): Todo => {
+    const id = Math.floor(Math.random() * 100);
     const todo: Todo = { id, name, isComplete: false };
     todos.push(todo);
+    return todo;
 }
 
 export const updateTodo = (todo: Todo): Todo | undefined => {
